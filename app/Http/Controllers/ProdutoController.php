@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\Produto;
+use App\Models\Produto;
 
-class ProdutooController extends Controller
+class ProdutoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,11 @@ class ProdutooController extends Controller
     {
         //listar todos os produtos
         //dd ('ENTROU NO INDEX');
-        $produtos = Produto::ordeBy('nome', 'ASC')->get();
+        $produtos = Produto::orderBy('nome', 'ASC')->get();
+
+        //select * from produtos order by nome asc;
         dd($produtos);
+
     }
 
     /**
