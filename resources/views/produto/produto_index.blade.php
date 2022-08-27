@@ -1,6 +1,6 @@
 <!-- resources/views/produto.index.php -->
  
-@extends('layouts.app')
+@extends('layout.app')
  
 @section('title', 'Page Title')
  
@@ -10,7 +10,24 @@
     <p> Produto - Index </p>
     @endsection
 
+    <table>
+     <tr>
+        <th>nome</th>
+        <th>quantidade</th>
+        <th>valor</th>
+     </tr>
+
+     <tr>
+        <th>nome</th>
+        <th>quantidade</th>
+        <th>valor</th>
+     </tr>
+
+
  
 @section('content')
-    <p>content.</p>
+    <p> Conteúdo </p>
+    @foreach ($produtos as $value)
+    <p> O produto se chama  {{ $value->nome }}!</p>
+    @endforeach
 @endsection

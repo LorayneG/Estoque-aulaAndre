@@ -19,8 +19,9 @@ class ProdutoController extends Controller
         $produtos = Produto::orderBy('nome', 'ASC')->get();
 
         //select * from produtos order by nome asc;
-        dd($produtos);
+        //dd($produtos);
 
+        return view('produto.produto_index', ['produtos' => $produtos]);
     }
 
     /**
@@ -43,7 +44,7 @@ class ProdutoController extends Controller
     {
         //dd('STORE');
 
-        $produto = new Produtos;
+        $produto = new Produto;
         $produto->nome           = 'Celular';
         $produto->quantidade     = 15;
         $produto->valor          = 1500;
@@ -82,7 +83,7 @@ class ProdutoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         //dd('UPDATE')
         $produto = Produto::find(4);
@@ -91,7 +92,7 @@ class ProdutoController extends Controller
         $produto->valor         = 2000;
         $produto->save();
 
-        dd($produto);
+        //dd($produto);
 
     }
 
@@ -103,7 +104,7 @@ class ProdutoController extends Controller
      */
     public function destroy($id)
     {
-        $produto = Produto>>find($id);
+        $produto = Produto::find($id);
         $produto->delete();
         //dd('DESTROY');
 

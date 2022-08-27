@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 
 //listar todos os produtos
-Route::get('/produto', [ProdutoController::class, 'index'])->name('produto.index');
+Route::get('/produto', [ProdutoController::class, 'index']);
 
 
 //exibe um produto
@@ -34,5 +34,5 @@ Route::get('/produtostore', [ProdutoController::class, 'store']);
 Route::get('/produtoupdate', [ProdutoController::class,'update']);
  
  
-//exclui um produto []
+//exclui um produto [DELETE]
 Route::get('/produtodestroy{id}', [ProdutoController::class, 'destroy']);

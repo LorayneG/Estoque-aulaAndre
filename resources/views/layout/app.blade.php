@@ -1,15 +1,16 @@
-<!-- resources/views/child.blade.php -->
+<!-- resources/views/layouts/app.blade.php -->
  
-@extends('layouts.app')
+<html>
+    <head>
+        <title>App Name - @yield('title')</title>
+    </head>
+    <body>
+        @section('sidebar')
+            Topo do meu sistema.
+        @show
  
-@section('title', 'Page Title')
- 
-@section('sidebar')
-    @parent
- 
-    <p>This is appended to the master sidebar.</p>
-@endsection
- 
-@section('content')
-    <p>This is my body content.</p>
-@endsection
+        <div class="container">
+            @yield('content')
+        </div>
+    </body>
+</html>
