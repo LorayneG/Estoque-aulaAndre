@@ -11,6 +11,9 @@
 @endsection
 
 @section('content')
+
+<a href="{{ url('produto/create') }}">CRIAR</a>
+
       <p> Conteúdo </p>
 
     <table>
