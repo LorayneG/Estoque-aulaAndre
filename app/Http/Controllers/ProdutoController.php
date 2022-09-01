@@ -61,7 +61,10 @@ class ProdutoController extends Controller
     {
         //dd('ENTROU NO SHOW');
         $produto = Produto::find($id);
-        dd($produto);
+        //dd($produto);
+        return view('produto.produto_show', ['produto' => $produto]);
+
+
 
     }
 
