@@ -31,7 +31,8 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        //
+        return view('produto.produto_create');
+
     }
 
     /**
@@ -42,13 +43,14 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //dd('STORE');
+        //dd($request->all());
 
         $produto = new Produto;
-        $produto->nome           = 'Celular';
-        $produto->quantidade     = 15;
-        $produto->valor          = 1500;
+        $produto->nome           = $request->nome;
+        $produto->quantidade     = $request->quantidade;
+        $produto->valor          = $request->valor;
         $produto->save();
+
     }
 
     /**

@@ -19,25 +19,28 @@ Route::get('/', function () {
 
 
 //listar todos os produtos
-Route::get('/produto', [ProdutoController::class, 'index']);
+Route::get('/produto', [ProdutoController::class, 'index'])->name('produto.index');
 
 
 //create
-Route::get('produto/create', [ProdutoController::class, 'create']);
+Route::get('produto/create', [ProdutoController::class, 'create'])->create('produto.create');
+
+
+//store
+Route::post('produto/create', [ProdutoController::class, 'store'])->store('produto.store');
 
 
 //exibe um produto
-Route::get('/produto/{id}', [ProdutoController::class, 'show']);
+Route::get('/produto/{id}', [ProdutoController::class, 'show'])->show('produto.show');
  
 
-
 //insere / criar um produto [POST]
-Route::get('/produtostore', [ProdutoController::class, 'store']);
+Route::get('/produtostore', [ProdutoController::class, 'store'])->store('produto.store');
  
  
 //alterar um produto [PUT]
-Route::get('/produtoupdate', [ProdutoController::class,'update']);
+Route::get('/produtoupdate', [ProdutoController::class,'update'])->update('produto.update');
  
  
 //exclui um produto [DELETE]
-Route::get('/produtodestroy{id}', [ProdutoController::class, 'destroy']);
+Route::get('/produtodestroy{id}', [ProdutoController::class, 'destroy'])->destroy('produto.destroy');
