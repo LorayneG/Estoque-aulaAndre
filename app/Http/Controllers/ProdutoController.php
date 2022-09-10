@@ -51,6 +51,7 @@ class ProdutoController extends Controller
         $produto->valor          = $request->valor;
         $produto->save();
 
+        return redirect('/produto')->with('status', 'Produto criado com sucessso!');
     }
 
     /**
@@ -78,7 +79,8 @@ class ProdutoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $produto = Produto::find($id);
+        return view('produto.produto_edit', ['produto' => $produto]);
     }
 
     /**
