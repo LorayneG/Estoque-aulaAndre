@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//CRUD
 
 //listar todos os produtos
 Route::get('/produto', [ProdutoController::class, 'index'])->name('produto.index');
