@@ -45,12 +45,18 @@ class ProdutoController extends Controller
     {
         //dd($request->all());
 
-        $validated = $request->validate([
-            'nome'        => 'required',
-            'quantidade'  => 'required',
-            'valor'       => 'required',
+        $messages = [
+         'nome.required'          => 'O campo :attribute é obrigatório!',
+         'nome.min'               => 'O :attribute precisa ter no mínimo :min.',
+         'quantidade.required'    => 'O :attribute é obrigatório!',
+         'quantidade.integer'     => 'A :attribute é obrigatória!'
+        ];
 
-        ]);
+            $validated = $request->validate([
+                'nome'         => 'required|min:8',
+                'quantidade'   => 'required|integer',
+                'valor'        => 'required',
+        ], $messages);
         
         $produto = new Produto;
         $produto->nome           = $request->nome;
