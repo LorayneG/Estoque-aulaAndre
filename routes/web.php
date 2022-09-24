@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\CategoriaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,3 +61,53 @@ Route::get('/produtodestroy{id}', [ProdutoController::class, 'destroy']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//----------------------PRODUTO---------------------------
+
+
+//---------------------CATEGORIA--------------------------
+
+
+//listar todos as categorias
+Route::get('/categoria', [CategoriaController::class, 'index'])->name('categoria.index');
+
+
+//create
+Route::get('/categoria/create', [CategoriaController::class, 'create'])->name('categoria.create');
+
+
+//store
+Route::post('/categoria/create', [CategoriaController::class, 'store'])->name('categoria.store');
+
+
+//edit
+Route::get('/categoria/{id}/edit', [CategoriaController::class, 'edit'])->name('categoria.edit');
+
+
+//update
+Route::put('/categoria/{id}', [CategoriaController::class, 'update'])->name('categoria.update');
+
+
+//delete
+Route::delete('/categoria/{id}', [CategoriaController::class, 'destroy'])->name('categoria.delete');
+
+//exibe um categoria
+Route::get('/categoria/{id}', [CategoriaController::class, 'show']);
+ 
+
+//insere / criar um categoria [POST]
+Route::get('/categoriastore', [CategoriaController::class, 'store']);
+ 
+ 
+//alterar um categoria [PUT]
+Route::get('/categoriaupdate', [CategoriaController::class,'update']);
+ 
+ 
+//exclui um categoria [DELETE]
+Route::get('/categoriadestroy{id}', [CategoriaController::class, 'destroy']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//---------------------CATEGORIA--------------------------

@@ -1,4 +1,4 @@
-<!-- resources/views/produto.index.php -->
+<!-- resources/views/categoria.index.php -->
  
 @extends('adminlte::page')
  
@@ -7,7 +7,7 @@
 @section('sidebar')
     @parent
  
-      <p> Produto - Index </p>
+      <p> Categoria - Index </p>
 @endsection
 
 @section('content')
@@ -18,7 +18,7 @@
     </div>
 @endif
 
-<a href="{{ url('produto/create') }}">CRIAR</a>
+<a href="{{ url('categoria/create') }}">CRIAR</a>
 
       <p> Conteúdo </p>
 
@@ -29,16 +29,16 @@
          <th>valor</th>
       </tr>
 
-      @foreach ($produtos as $value)
+      @foreach ($categorias as $value)
     
       <tr>
          <td>{{ $value->nome          }}</td>
          <td>{{ $value->quantidade    }}</td>
          <td>{{ $value->valor         }}</td>
-         <td><a href="{{ url('produto/' . $value->id) }}">Visualizar</a></td> 
-         <td><a href="{{ url('produto/' . $value->id . '/edit') }}">Editar</a></td>
+         <td><a href="{{ url('categoria/' . $value->id) }}">Visualizar</a></td> 
+         <td><a href="{{ url('categoria/' . $value->id . '/edit') }}">Editar</a></td>
          <td>
-          {!! Form::open(['url' => 'produto/' . $value->id, 'method' => 'delete']) !!}
+          {!! Form::open(['url' => 'categoria/' . $value->id, 'method' => 'delete']) !!}
           {{  Form::submit('Deletar') }}
     
           {!! Form::close() !!}

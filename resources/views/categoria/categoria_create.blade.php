@@ -1,4 +1,4 @@
-<!-- resources/views/produto.create.php -->
+<!-- resources/views/categoria.create.php -->
  
 @extends('adminlte::page')
  
@@ -7,7 +7,7 @@
 @section('sidebar')
     @parent
  
-      <p>Produto - Create</p>
+      <p>Categoria - Create</p>
 @endsection
 
 @section('content')
@@ -23,7 +23,7 @@
       </div>
       @endif
 
-      {!! Form::open(['url' => 'produto/create']) !!}
+      {!! Form::open(['url' => 'categoria/create']) !!}
 
       {{  Form::label('nome', 'Nome:') }} <br>
       {{  Form::text('nome') }} <br><br>
