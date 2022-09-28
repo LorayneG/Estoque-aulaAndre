@@ -92,7 +92,7 @@ Route::put('/categoria/{id}', [CategoriaController::class, 'update'])->name('cat
 Route::delete('/categoria/{id}', [CategoriaController::class, 'destroy'])->name('categoria.delete');
 
 //exibe um categoria
-Route::get('/categoria/{id}', [CategoriaController::class, 'show']);
+Route::get('/categoria/{id}', [CategoriaController::class, 'show'])->name('categoria.show');
  
 
 //insere / criar um categoria [POST]
